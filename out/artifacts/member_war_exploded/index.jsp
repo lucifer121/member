@@ -49,7 +49,7 @@
 
 <!-- 导航 开始 -->
 <ul class="index_nav container clearfix" id="navigationBar">
-    <li><a href="/index.jsp?id=1">抢红包</a></li>
+    <li><a href="index.jsp?id=1">抢红包</a></li>
     <li><a href='http://www.sdbinfu.com/' target='_blank'>抢优惠券</a></li>
     <li id="li2"><a href="index.jsp?id=3">爱奇艺会员</a></li>
     <li><a href="index.jsp?id=4">优酷土豆会员</a></li>
@@ -75,8 +75,8 @@
         </form>
     </div>
     <div class="receive" id="receive">
-        <h4 class="hint">恭喜！领取成功！</h4>
-        <h4>您获得的账号是</h4><h4 id="get-account"></h4>
+        <div class="hint-div"><h4 class="hint">恭喜！领取成功！</h4></div>
+        <div class="hint-div"><h4 class="hint" id="get-account"></h4></div>
     </div>
 
 

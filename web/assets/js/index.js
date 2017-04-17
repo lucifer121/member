@@ -115,7 +115,10 @@ function validate() {
                     var result = json.result;
                     if (result == 'success') {
                         $("#receive").css('display','block');
-                        $("#get-account").text(json.account);
+                        $("#get-account").text("您获取的账号是："+json.account);
+                    }else{
+                        $("#receive").css('display','none');
+                        alert("领取失败，领取码不正确，详情请加入qq群询问管理");
                     }
                 },
                 error: function (e) {
