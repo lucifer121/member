@@ -31,6 +31,15 @@
         <url-pattern>/saveServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SearchCDkeyServlet</servlet-name>
+        <servlet-class>com.lucifer.servlet.SearchCDkeyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchCDkeyServlet</servlet-name>
+        <url-pattern>/searchCDkeyServlet</url-pattern>
+    </servlet-mapping>
+
 
     <filter>
         <filter-name>FilterOne</filter-name>

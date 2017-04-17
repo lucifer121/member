@@ -5,6 +5,8 @@ import com.lucifer.dao.MemberDao;
 import com.lucifer.util.DateTransform;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zhangchuanqiang on 2017/4/6.
@@ -24,9 +26,10 @@ public class MemberDaoImpl implements MemberDao {
     }
 
     @Override
-    public String Search(Connection conn, String member_key) throws SQLException {
-        PreparedStatement ps = conn.prepareStatement("select * from tbl_member where member_key=?");
+    public String Search(Connection conn, String member_key,String member_type) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement("select * from tbl_member where member_key=? AND member_type= ?");
         ps.setString(1, member_key);
+        ps.setString(2,member_type);
         ResultSet rs = ps.executeQuery();
         String memberAccount=null;
         while (rs.next()) {
@@ -42,5 +45,21 @@ public class MemberDaoImpl implements MemberDao {
         PreparedStatement ps = conn.prepareStatement("UPDATE tbl_member set receive='1' where member_key=?");
         ps.setString(1,member_key);
         ps.execute();
+    }
+
+    @Override
+    public List<String> getCDkey(Connection conn, String type) throws SQLException {
+
+        PreparedStatement ps = conn.prepareStatement("select * from tbl_member where member_type= ? AND receive=?");
+        ps.setString(1,type);
+        ps.setString(2,"0");//未领取
+        ResultSet rs = ps.executeQuery();
+        List<String> cdKeys=new ArrayList<>();
+        while (rs.next()) {
+//            System.out.print(rs.getString("member_account") + " ");
+//            System.out.println();
+            cdKeys.add(rs.getString("member_key"));
+        }
+        return cdKeys;
     }
 }

@@ -3,6 +3,7 @@ package com.lucifer.servlet;
 import com.lucifer.dao.MemberDao;
 import com.lucifer.dao.impl.MemberDaoImpl;
 import com.lucifer.util.ConnectionFactory;
+import net.sf.json.JSONObject;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,12 +23,12 @@ public class ReceiveServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         String CDkey=req.getParameter("CDkey");
         System.out.println("提取码====="+CDkey);
+        String typeId=req.getParameter("id");
         Connection conn= ConnectionFactory.getInstance().makeConnection();
         try{
             conn.setAutoCommit(false);
             MemberDao memberDao=new MemberDaoImpl();
-
-            account=memberDao.Search(conn,CDkey);
+            account=memberDao.Search(conn,CDkey,typeId);
             conn.commit();
             if (account!=null){
                 memberDao.UpdateReceive(conn,CDkey);
@@ -42,15 +43,25 @@ public class ReceiveServlet extends HttpServlet {
             }
         }
         if (account!=null){
-            forword="/member/receiveSuccess.jsp";
-            req.setAttribute("account",account);
-            RequestDispatcher rd=req.getRequestDispatcher(forword);
-            rd.forward(req,response);
-
+//            forword="/member/receiveSuccess.jsp";
+//            req.setAttribute("account",account);
+//            RequestDispatcher rd=req.getRequestDispatcher(forword);
+//            rd.forward(req,response);
+            StringBuffer str=new StringBuffer();
+            str.append("{\"result\":\"success\",\"message\":\"获取成功！\"");
+            str.append(",\"account\":\"");
+            str.append(account);
+            str.append("\"");
+            str.append( "}");
+            JSONObject object=JSONObject.fromObject(str.toString());
+            response.getWriter().println(object);
         }else{
-            forword="/member/receiveFail.jsp";
-            RequestDispatcher rd=req.getRequestDispatcher(forword);
-            rd.forward(req,response);
+//            forword="/member/receiveFail.jsp";
+//            RequestDispatcher rd=req.getRequestDispatcher(forword);
+//            rd.forward(req,response);
+            String str="{\"result\":\"fail\",\"message\":\"获取失败！\"}";
+            JSONObject object=JSONObject.fromObject(str);
+            response.getWriter().println(object);
         }
 
     }

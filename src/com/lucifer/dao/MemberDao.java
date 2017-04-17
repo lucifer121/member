@@ -4,6 +4,7 @@ import com.lucifer.bean.MemberBean;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by zhangchuanqiang on 2017/4/6.
@@ -15,7 +16,7 @@ public interface MemberDao {
      * @param memberBean
      * @throws SQLException
      */
-    public void insert(Connection connection, MemberBean memberBean) throws SQLException;
+     void insert(Connection connection, MemberBean memberBean) throws SQLException;
 
     /**
      * 获取账号
@@ -24,7 +25,7 @@ public interface MemberDao {
      * @return
      * @throws SQLException
      */
-    public String Search(Connection connection, String member_key) throws SQLException;
+     String Search(Connection connection, String member_key,String member_type) throws SQLException;
 
     /**
      * 更新数据库 中该账户已经被领取
@@ -32,7 +33,12 @@ public interface MemberDao {
      * @param member_key
      * @throws SQLException
      */
-    public void UpdateReceive(Connection connection,String member_key) throws SQLException;
+     void UpdateReceive(Connection connection,String member_key) throws SQLException;
+
+
+     List<String> getCDkey(Connection conn, String type) throws SQLException;
+
+
 
 
 }

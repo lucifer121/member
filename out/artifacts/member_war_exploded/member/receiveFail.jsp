@@ -9,11 +9,16 @@
 <html>
 <head>
     <title>获取失败</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/index.css"/>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <%--<script src="../assets/js/administration.js"></script>--%>
 </head>
 <body>
-领取失败<br>
-您的领取码是:<%= request.getParameter("CDkey")%><br>
-您获取的账号是:<br>
+<div class="center">
+    <h1 >领取失败</h1><br>
+    您的领取码是:<%= request.getParameter("CDkey")%><br>
+    <br>
 <a href="index.jsp">返回领取页面</a>
+</div>
 </body>
 </html>

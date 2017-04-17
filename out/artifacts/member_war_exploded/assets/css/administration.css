@@ -1,24 +1,28 @@
+.bg{
+    background-color: #2a6496;
+}
 .center {
-    height: 400px;
-    width: 400px;
-    background-color: #c0a16b;
+    height: 300px;
+    width: 800px;
+    background-color: #99612c;
     /*border: 4px solid red;*/
     position: absolute;
-
     text-align: center;
-
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
+
     /*50%为自身尺寸的一半*/
+    flex-direction: row;
+    display: flex;
 }
 .save{ display: block;
     width: 100%;
     height: 100%;
-    background-color: #e41400;
-    border: solid 1px #e41400;
+    background-color: #3c763d;
+    border: solid 1px #3c763d;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -27,7 +31,14 @@
     line-height: 38px;
 }
 .textarea{
-    padding: 5px;
-    text-align: center;
-    color: #1d70f9;
+    padding: 10px;
+    color: #000;
+}
+.search-key{
+    /*margin-left: 30px;*/
+    margin: auto auto;
+}
+.type-account-selecter{
+    margin: 0 auto;
+    margin-left: 30px;
 }
