@@ -12,9 +12,10 @@ function SaveAccount() {
     var type = document.getElementById("type").value;
     var account = document.getElementById("account").value;
 
-    var reg = /[a-zA-Z]+(?=\d+)|\d+(?=[a-zA-Z]+)/g;
+    // var reg = /[a-zA-Z]+(?=\d+)|\d+(?=[a-zA-Z]+)/g;
+    var reg=/[0-9a-z]/i;
     //验证是否含有字符
-    if (reg.test(account)) {
+    if (reg.test(account)==true) {
         $.ajax({
             type: 'POST',
             url: "http://localhost:8080/member/saveServlet",
@@ -36,6 +37,8 @@ function SaveAccount() {
             }
 
         });
+        alert("有账号")
+
     } else {
         alert("请输入账号后再上传！")
     }

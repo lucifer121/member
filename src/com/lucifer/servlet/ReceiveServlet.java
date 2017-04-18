@@ -22,7 +22,6 @@ public class ReceiveServlet extends HttpServlet {
     String forword=null;
     protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         String CDkey=req.getParameter("CDkey");
-        System.out.println("提取码====="+CDkey);
         String typeId=req.getParameter("id");
         Connection conn= ConnectionFactory.getInstance().makeConnection();
         try{
@@ -34,7 +33,7 @@ public class ReceiveServlet extends HttpServlet {
                 memberDao.UpdateReceive(conn,CDkey);
                 conn.commit();
             }
-            System.out.println(account);
+//            System.out.println(account);
         }catch (Exception e){
             try{
                 conn.rollback();
