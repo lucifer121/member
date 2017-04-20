@@ -105,7 +105,7 @@ function validate() {
             var type=id-2;
             $.ajax({
                 type: 'POST',
-                url: "http://localhost:8080/member/receiveServlet",
+                url: "http://1av7022880.iask.in:38613/member/receiveServlet",
                 data: {
                     id: type,
                     CDkey: CDkey

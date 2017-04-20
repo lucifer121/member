@@ -57,6 +57,7 @@ public class SaveServlet extends HttpServlet {
         }
         String str="{\"result\":\"success\",\"message\":\"成功！\"}";
         JSONObject object=JSONObject.fromObject(str);
+        resp.setHeader("Access-Control-Allow-Origin", "*");
         resp.getWriter().println(object);
 
     }

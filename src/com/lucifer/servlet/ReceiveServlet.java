@@ -53,6 +53,7 @@ public class ReceiveServlet extends HttpServlet {
             str.append("\"");
             str.append( "}");
             JSONObject object=JSONObject.fromObject(str.toString());
+            response.setHeader("Access-Control-Allow-Origin", "*");
             response.getWriter().println(object);
         }else{
 //            forword="/member/receiveFail.jsp";
@@ -60,6 +61,7 @@ public class ReceiveServlet extends HttpServlet {
 //            rd.forward(req,response);
             String str="{\"result\":\"fail\",\"message\":\"获取失败！\"}";
             JSONObject object=JSONObject.fromObject(str);
+            response.setHeader("Access-Control-Allow-Origin", "*");
             response.getWriter().println(object);
         }
 

@@ -50,6 +50,7 @@ public class SearchCDkeyServlet extends HttpServlet {
         JSONArray jsonarray = JSONArray.fromObject(keys);
         String str = "{\"result\":\"success\",\"message\":\"成功！\"}";
 //        JSONObject object = JSONObject.fromObject(str);
+        resp.setHeader("Access-Control-Allow-Origin", "*");
         resp.getWriter().println(jsonarray.toString());
 
 
