@@ -64,12 +64,12 @@
 <!-- 内容 开始 -->
 <div class="sort1 container">
     <div class="sort1_box">
-        <div class="left-img">
-            <div class="diycode-view">
-                <image type="image" src="assets/images/dog.png" class="diycode"/>
-                <h5 class="diycode-hint">扫码关注微信</h5>
-            </div>
-        </div>
+        <%--<div class="left-img" hidden>--%>
+            <%--<div class="diycode-view">--%>
+                <%--<image type="image" src="assets/images/dog.png" class="diycode"/>--%>
+                <%--<h5 class="diycode-hint">扫码关注微信</h5>--%>
+            <%--</div>--%>
+        <%--</div>--%>
         <form method="post" id="accountFrom">
             <div class="p1" id="p1">请输入爱奇艺vip领取码：</div>
             <div class="p2"><input placeholder="领取码" name="CDkey" id="CDkey"/></div>
