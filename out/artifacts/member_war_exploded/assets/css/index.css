@@ -1,0 +1,14 @@
+.receive{
+    width: 100%;
+    margin: 20px auto;
+    display: none;
+}
+.hint{
+    font-size: 20px;
+    color: red;
+    margin: 10px auto;
+}
+.hint-div{
+    width: 100%;
+    display: flex;
+}

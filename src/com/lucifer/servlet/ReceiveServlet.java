@@ -1,7 +1,9 @@
 package com.lucifer.servlet;
 
 import com.lucifer.dao.MemberDao;
+import com.lucifer.dao.MemberMoreDao;
 import com.lucifer.dao.impl.MemberDaoImpl;
+import com.lucifer.dao.impl.MemberMoreDaoImpl;
 import com.lucifer.util.ConnectionFactory;
 import net.sf.json.JSONObject;
 
@@ -26,12 +28,20 @@ public class ReceiveServlet extends HttpServlet {
         Connection conn= ConnectionFactory.getInstance().makeConnection();
         try{
             conn.setAutoCommit(false);
-            MemberDao memberDao=new MemberDaoImpl();
-            account=memberDao.Search(conn,CDkey,typeId);
+            MemberMoreDao memberMoreDao=new MemberMoreDaoImpl();
+            String cdkey=memberMoreDao.queryCDkey(conn,typeId);
             conn.commit();
-            if (account!=null){
-                memberDao.UpdateReceive(conn,CDkey);
+            if (cdkey!=null&&cdkey.equals(CDkey)){
+                account=memberMoreDao.queryAccount(conn,typeId);
                 conn.commit();
+            }else{
+                MemberDao memberDao=new MemberDaoImpl();
+                account=memberDao.Search(conn,CDkey,typeId);
+                conn.commit();
+                if (account!=null){
+                    memberDao.UpdateReceive(conn,CDkey);
+                    conn.commit();
+                }
             }
 //            System.out.println(account);
         }catch (Exception e){
