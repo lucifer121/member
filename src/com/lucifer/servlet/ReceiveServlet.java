@@ -23,6 +23,8 @@ public class ReceiveServlet extends HttpServlet {
     String account=null;
     String forword=null;
     protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String CDkey=req.getParameter("CDkey");
         String typeId=req.getParameter("id");
         Connection conn= ConnectionFactory.getInstance().makeConnection();

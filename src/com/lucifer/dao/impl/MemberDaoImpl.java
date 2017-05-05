@@ -15,7 +15,7 @@ public class MemberDaoImpl implements MemberDao {
     @Override
     public void insert(Connection conn, MemberBean memberBean) throws SQLException {
         PreparedStatement ps = conn.prepareStatement("INSERT INTO tbl_member(member_type,member_key,member_account,create_date)" +
-                "VALUES (?,?,?,?)");
+                "VALUES (?,?,N?,?)");
        Date date= DateTransform.toSqlDate(memberBean.getCreate_data());
         ps.setString(1, memberBean.getMember_type());
         ps.setString(2, memberBean.getMember_key());

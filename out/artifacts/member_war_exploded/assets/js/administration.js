@@ -20,7 +20,7 @@ function SaveAccount() {
     if (reg.test(account)==true) {
         $.ajax({
             type: 'POST',
-            url: "http://1av7022880.iask.in:38613/member/saveServlet",
+            url: "/member/saveServlet",
             data: {
                 type: type,
                 account: account
@@ -54,7 +54,7 @@ function getCDkey() {
     else {
         $.ajax({
             type: 'POST',
-            url: "http://1av7022880.iask.in:38613/member/searchCDkeyServlet",
+            url: "/member/searchCDkeyServlet",
             data: {
                 type: type,
             },
@@ -97,7 +97,7 @@ function SaveAccountMore() {
     if (reg.test(account)==true) {
         $.ajax({
             type: 'POST',
-            url: "http://1av7022880.iask.in:38613/member/saveMoreServlet",
+            url: "/member/saveMoreServlet",
             data: {
                 type: type,
                 account: account
@@ -133,7 +133,7 @@ function UpdateKeyMore() {
     if (reg.test(key)==true) {
         $.ajax({
             type: 'POST',
-            url: "http://1av7022880.iask.in:38613/member/updateCdKeyServlet",
+            url: "/member/updateCdKeyServlet",
             data: {
                 type: type,
                 key: key

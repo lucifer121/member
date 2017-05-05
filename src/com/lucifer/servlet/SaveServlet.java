@@ -27,6 +27,8 @@ public class SaveServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        super.doPost(req, resp);
+        req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         Connection conn= ConnectionFactory.getInstance().makeConnection();
         String type=req.getParameter("type");
         String account=req.getParameter("account");

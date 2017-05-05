@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>管理中心</title>
+    <meta content="text/html;charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../assets/css/administration.css"/>
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="../assets/js/administration.js"></script>
@@ -125,13 +126,7 @@
                     </td>
                 </tr>
             </table>
-
-
         </div>
     </div>
-
-
-
-
 </body>
 </html>

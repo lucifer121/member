@@ -39,28 +39,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
-        Connection conn= ConnectionFactory.getInstance().makeConnection();
-        String type=req.getParameter("type");
-        String account=req.getParameter("account");
-        Date now = new Date();
-        MemberDao memberDao=new MemberDaoImpl();
-        MemberBean memberBean=new MemberBean();
-        memberBean.setMember_key(""+System.currentTimeMillis());
-        memberBean.setMember_type(type);
-        memberBean.setMember_account(account);
-        memberBean.setCreate_data(now);
-
-        try{
-            conn.setAutoCommit(false);
-            memberDao.insert(conn,memberBean);
-            System.out.println("向表中插入了"+1+"条数据");
-            log("向表中插入了"+1+"条数");
-        }catch (Exception e){
-            try{
-                conn.rollback();
-            }catch (Exception e1){
-                e1.printStackTrace();
-            }
-        }
+        
     }
 }

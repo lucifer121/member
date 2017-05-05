@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <html>
 <head>
+    <meta charset="UTF-8"> <!-- for HTML5 -->
     <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta>
@@ -42,7 +42,9 @@
         <script type="text/javascript" charset="utf-8"
                 src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
         <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
-        <div class="share2">免责声明：本站所有账号都来自于热心网友的分享，本站不生产账号，只是账号的搬运工，为让用户体验会员服务为目的，并不以此为盈利目的，账号的所有权归原账号注册人和原视频网站所有，如有侵权或不在愿意继续分享，请立即与我们联系进行处理。本站反馈邮箱bffkyx@163.com</div>
+        <div class="share2">
+            免责声明：本站所有账号都来自于热心网友的分享，本站不生产账号，只是账号的搬运工，为让用户体验会员服务为目的，并不以此为盈利目的，账号的所有权归原账号注册人和原视频网站所有，如有侵权或不在愿意继续分享，请立即与我们联系进行处理。本站反馈邮箱bffkyx@163.com
+        </div>
     </div>
 </div>
 <!-- 头部 结束 -->
@@ -50,26 +52,26 @@
 <!-- 导航 开始 -->
 <ul class="index_nav container clearfix" id="navigationBar">
     <li><a href="http://www.bfrjz.cn/" target='_blank'>软件站</a></li>
-    <li><a href='http://www.sdbinfu.com/' target='_blank'>抢优惠券</a></li>
-    <li id="li2"><a href="index.jsp?id=3">爱奇艺会员</a></li>
-    <li><a href="index.jsp?id=4">优酷土豆会员</a></li>
-    <li><a href="index.jsp?id=5">迅雷会员</a></li>
-    <li><a href="index.jsp?id=6">乐视会员</a></li>
-    <li><a href="index.jsp?id=7">芒果会员</a></li>
-    <li><a href="index.jsp?id=8">搜狐会员</a></li>
-    <li><a href="index.jsp?id=9">酷狗音乐会员</a></li>
+    <li><a href='http://www.zhouzhouguangjie.com/' target='_blank'>抢优惠券</a></li>
+    <li id="li2"><a href="index.html?id=3">爱奇艺会员</a></li>
+    <li><a href="index.html?id=4">优酷土豆会员</a></li>
+    <li><a href="index.html?id=5">迅雷会员</a></li>
+    <li><a href="index.html?id=6">乐视会员</a></li>
+    <li><a href="index.html?id=7">芒果会员</a></li>
+    <li><a href="index.html?id=8">搜狐会员</a></li>
+    <li><a href="index.html?id=9">酷狗音乐会员</a></li>
 </ul>
 <!-- 导航 结束 -->
 
 <!-- 内容 开始 -->
 <div class="sort1 container">
     <div class="sort1_box">
-        <%--<div class="left-img" hidden>--%>
-            <%--<div class="diycode-view">--%>
-                <%--<image type="image" src="assets/images/dog.png" class="diycode"/>--%>
-                <%--<h5 class="diycode-hint">扫码关注微信</h5>--%>
-            <%--</div>--%>
-        <%--</div>--%>
+        <div class="left-img">
+            <div class="diycode-view">
+                <image type="image" src="assets/images/qqgroup.png" class="diycode"/>
+                <h5 class="diycode-hint">扫码加入qq群</h5>
+            </div>
+        </div>
         <form method="post" id="accountFrom">
             <div class="p1" id="p1">请输入爱奇艺vip领取码：</div>
             <div class="p2"><input placeholder="领取码" name="CDkey" id="CDkey"/></div>
@@ -79,17 +81,25 @@
             </div>
             <a class="lq" name="btn-get-code" onclick="validate()">领取</a>
         </form>
+        <div class="left-img">
+            <div class="diycode-view">
+                <image type="image" src="assets/images/wxgroup.png" class="diycode"/>
+                <h5 class="diycode-hint">扫码加入微信群</h5>
+            </div>
+        </div>
     </div>
-    <div class="receive" id="receive">
-        <div class="hint-div"><h4 class="hint">恭喜！领取成功！</h4></div>
-        <div class="hint-div"><h4 class="hint" id="get-account"></h4></div>
-    </div>
+</div>
+<div class="receive" id="receive">
+    <div class="hint-div"><h4 class="hint">恭喜！领取成功！</h4></div>
+    <div class="hint-div"><h4 class="hint" id="get-account"></h4></div>
+</div>
 
 
 </div>
 <div class="cont_top cont_list_top container sport_new tu">
     <p>请在以上搜索框内输入群主最新发布的领取码, 并且输入图片中的验证码，然后点击"领取"</p>
-    <p><span>如果你没有最新的领取码，请<a href="https://jq.qq.com/?_wv=1027&amp;k=46io78E" target="_blank">点此加入我们的官方QQ群******</a>领取码在群公告</span>
+    <p>
+        <span>如果你没有最新的领取码，请加入我们的官方QQ群 415115932 </a>领取码在群公告</span>
     </p>
     <p>本网站全天候24小时为大家免费提供爱奇艺VIP会员！本网站不对外开放,如需使用请先加群！</p>
 
